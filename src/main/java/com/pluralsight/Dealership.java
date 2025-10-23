@@ -18,31 +18,26 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
+        return null;
     }
     public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String Model){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
-    } public ArrayList<Vehicle> getVehiclesByYear(int min,  int max){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
-    } public ArrayList<Vehicle> getVehiclesByColor(String color){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
+        return null;
+    }
+    public ArrayList<Vehicle> getVehiclesByYear(int min,  int max){
+        return null;
+    }
+    public ArrayList<Vehicle> getVehiclesByColor(String color){
+        return null;
     }
     public ArrayList<Vehicle> getVehiclesByMileage(int min, int max){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
+        return null;
     }
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
+        return null;
     }
 
     public ArrayList<Vehicle> getAllVehicles(){
-        ArrayList<Vehicle> foundVehicle=new ArrayList<>();
-        return foundVehicle;
+        return null;
     }
 
     public void addVehicle(Vehicle vehicle){
