@@ -1,13 +1,14 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Dealership {
 
     private String name;
     private String address;
     private String phone;
-    private ArrayList<Vehicle> inventory;
+    private final ArrayList<Vehicle> inventory=new ArrayList<>();
 
 
     public Dealership(String name, String address, String phone) {
@@ -36,13 +37,15 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle> getAllVehicles(){
-        return this.inventory;
+        return inventory;
     }
 
     public void addVehicle(Vehicle vehicle){
-
+        inventory.add(vehicle);
     }
     public void removeVehicle(Vehicle vehicle){
 
     }
+
+
 }

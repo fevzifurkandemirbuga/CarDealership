@@ -8,8 +8,14 @@ public class UserInterface {
     private Dealership dealership;
 
 
+    public UserInterface() {
+        System.out.println("userInterface constructer");
+        init();
+
+    }
 
     private void init(){
+        System.out.println("init method");
         dealership=new DealershipFileManager().getDealership();
 
 
@@ -31,6 +37,7 @@ public class UserInterface {
                 9) Remove a vehicle
                 99) Quit
                 """);
+            System.out.print("enter your choice: ");
             String command=scan.nextLine();
             switch (command){
                 case "1" -> processGetByPriceRequest();

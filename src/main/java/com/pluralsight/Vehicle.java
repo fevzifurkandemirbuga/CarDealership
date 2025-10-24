@@ -21,4 +21,18 @@ public class Vehicle {
         this.odometer = odometer;
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "\n**************************" +
+                "\nvin: " + vin +
+                "\nyear: " + year +
+                "\nmake: '" + make + '\'' +
+                "\nmodel: '" + model + '\'' +
+                "\nvehicleType: '" + vehicleType + '\'' +
+                "\ncolor: '" + color + '\'' +
+                "\nodometer: " + odometer +
+                "\nprice: " + price +
+                "\n**************************";
+    }
 }

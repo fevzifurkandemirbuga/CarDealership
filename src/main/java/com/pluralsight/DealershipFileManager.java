@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class DealershipFileManager {
 
@@ -15,7 +16,6 @@ public class DealershipFileManager {
 
             String line;
             bufferedReader.readLine();
-
             while((line= bufferedReader.readLine())!=null){
                 String[] datas=line.split("\\|");
                 int vin= Integer.parseInt(datas[0]);
