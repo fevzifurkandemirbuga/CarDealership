@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -45,8 +46,12 @@ public class UserInterface {
                 default -> System.out.println("invalid choice please try again");
             }
         }
+    }
 
-
+    public void displayVehicles(ArrayList<Vehicle> vehicles){
+        for(Vehicle v:vehicles){
+            System.out.println(v);
+        }
     }
 
     public void processGetByPriceRequest(){
@@ -70,6 +75,7 @@ public class UserInterface {
     }
 
     public void processGetAllVehicles() {
+        displayVehicles(dealership.getAllVehicles());
 
     }
 
