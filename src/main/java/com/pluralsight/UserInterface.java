@@ -172,7 +172,6 @@ public class UserInterface {
                     .toList()
             );
         }
-        ;
 
         System.out.print("enter make (optional): ");
         String make = scan.nextLine();
