@@ -35,6 +35,8 @@ public class UserInterface {
                     7) List ALL vehicles
                     8) Add a vehicle
                     9) Remove a vehicle
+                    10) Sale of a vehicle
+                    11) Lease of a vehicle
                     99) Quit
                     """);
             System.out.print("enter your choice: ");
@@ -49,6 +51,8 @@ public class UserInterface {
                 case "7" -> processGetAllVehicles();
                 case "8" -> addVehicleRequest();
                 case "9" -> removeVehicleRequest();
+                case "10" -> sellVehicle();
+                case "11" -> leaseVehicle();
                 case "99" -> running = false;
                 default -> System.out.println("invalid choice please try again");
             }
@@ -119,6 +123,14 @@ public class UserInterface {
 
     public void processGetAllVehicles() {
         displayVehicles(dealership.getAllVehicles());
+    }
+
+    public Vehicle processGetByVinNumber(){
+        Scanner scan =new Scanner(System.in);
+        System.out.print("Enter the vin number: ");
+        int vinNumber=scan.nextInt();
+        scan.nextLine();
+        return dealership.getVehicleByVinNumber(vinNumber);
     }
 
     public void addVehicleRequest() {
@@ -217,6 +229,45 @@ public class UserInterface {
 
 
     }
+
+    public void sellVehicle(){
+        Vehicle vehicleSold=processGetByVinNumber();
+        if(vehicleSold==null){
+            System.out.println("vehicle could not found. Please try again.");
+            return;
+        }
+        System.out.print("date of contract: ");
+        String date=scan.nextLine();
+        System.out.print("customer name: ");
+        String customerName=scan.nextLine();
+        System.out.print("customer email: ");
+        String customerEmail=scan.nextLine();
+        System.out.print("do you want finance(yes/no): ");
+        boolean financed=scan.nextLine().equalsIgnoreCase("yes");
+
+        SalesContract salesContract=new SalesContract(vehicleSold,date,customerName,customerEmail,financed);
+
+
+    }
+
+    public void leaseVehicle(){
+
+        Vehicle vehicleSold=processGetByVinNumber();
+        if(vehicleSold==null){
+            System.out.println("vehicle could not found. Please try again.");
+            return;
+        }
+        System.out.print("date of contract: ");
+        String date=scan.nextLine();
+        System.out.print("customer name: ");
+        String customerName=scan.nextLine();
+        System.out.print("customer email: ");
+        String customerEmail=scan.nextLine();
+
+        LeaseContract leaseContract=new LeaseContract(vehicleSold,date,customerName,customerEmail);
+
+    }
+
 
 
 }

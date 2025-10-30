@@ -69,6 +69,14 @@ public class Dealership {
         return inventory;
     }
 
+    public Vehicle getVehicleByVinNumber(int vinNumber){
+        return inventory.stream()
+                .filter(v->v.getVin()==vinNumber)
+                .findFirst()
+                .orElse(null);
+
+    }
+
     public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
     }
